@@ -1,18 +1,19 @@
 /* ========================================================= */
-/* VARIABLES */
+/* VARIABLES DE COLOR (Tomadas del código Proactive Care) */
 /* ========================================================= */
 :root {
-    --color-speed-blue: #007bff;          /* Azul principal (BMW) */
-    --color-speed-blue-dark: #0056b3;     /* Azul más oscuro para hover */
-    --color-dark: #212529;                /* Color de texto principal */
-    --color-text-muted: #6c757d;          /* Texto secundario */
-    --color-light-bg: #f8f9fa;            /* Fondo claro */
-    --font-main: 'Roboto', sans-serif;    /* Fuente principal */
+    /* Paleta ajustada: Reemplazamos el azul por el verde oscuro */
+    --color-primary-bmw: #404f4b; /* Color principal oscuro (Azul/Verde) */
+    --color-primary-bmw-dark: #2e3835; /* Color para hover (más oscuro que el principal) */
+    --color-dark: #333; /* Texto oscuro principal */
+    --color-text-muted: #555; /* Texto secundario/apagado */
+    --color-light-bg: #f5f5f5; /* Fondo claro de secciones de características */
+    --color-footer-dark: var(--color-primary-bmw); /* Fondo del footer igual al color principal */
+    --color-border: #ddd; /* Borde de tarjetas y elementos sutiles */
+    --font-main: 'Montserrat', sans-serif;
 }
 
-/* ========================================================= */
-/* ESTILOS BÁSICOS */
-/* ========================================================= */
+/* ESTILOS BASE Y RESET */
 body {
     font-family: var(--font-main);
     color: var(--color-dark);
@@ -28,17 +29,247 @@ body {
     padding: 0 20px;
 }
 
-h2 {
-    font-weight: 500;
+h1, h2, h3 {
+    font-weight: 700; /* Se ajusta a la Montserrat bold (700) */
     line-height: 1.2;
     margin-top: 0;
 }
 
+.subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--color-primary-bmw); /* Títulos en color principal */
+}
+
+a {
+    color: var(--color-primary-bmw);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Estilo de enlaces de característica (con flecha) */
+.feature-link {
+    color: var(--color-primary-bmw);
+    font-size: 0.95rem;
+    font-weight: 600; /* Se ajusta a 600 de Montserrat */
+    display: inline-flex;
+    align-items: center;
+}
+.feature-link i {
+    font-size: 0.8em;
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+/* HOVER: Enlaces de característica */
+.feature-link:hover {
+    color: var(--color-primary-bmw-dark);
+}
+.feature-link:hover i {
+    transform: translateX(3px);
+}
+
+/* Botones base */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 6px; /* Ligeramente más redondeado */
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+    position: relative; 
+    overflow: hidden; 
+    z-index: 1;
+}
+
+/* Botón principal (verde oscuro) */
+.btn-primary {
+    background: var(--color-primary-bmw);
+    color: white !important;
+}
+.btn-primary:hover {
+    background: var(--color-primary-bmw-dark);
+}
+
+/* Pseudo-elemento ::after para efecto de brillo en hover */
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: transform 0.5s ease-out;
+    transform: translateX(-100%);
+    z-index: -1;
+}
+
+.btn-primary:hover::after {
+    transform: translateX(0);
+    z-index: 0; 
+}
+
+/* Botón de login (borde verde oscuro) */
+.btn-login {
+    background: none;
+    color: var(--color-primary-bmw) !important;
+    border: 1px solid var(--color-primary-bmw);
+    padding: 8px 18px;
+    font-weight: 600;
+    text-transform: none; /* Dejamos la primera letra mayúscula */
+    font-size: 1rem;
+}
+.btn-login:hover {
+    background: var(--color-primary-bmw);
+    color: white !important;
+    border-color: var(--color-primary-bmw-dark);
+}
+
+/* Botón de CTA final (fondo blanco) */
+.btn-light {
+    background: white;
+    color: var(--color-primary-bmw) !important;
+}
+.btn-light:hover {
+    background: #e0e0e0;
+}
+
 /* ========================================================= */
-/* FEATURE SECTIONS */
+/* HEADER / NAVBAR */
+/* ========================================================= */
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-primary-bmw);
+}
+
+.logo-icon {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 1rem; /* Ligeramente más grande */
+}
+
+.nav-links a {
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+.nav-links a:not(.btn):hover {
+    color: var(--color-dark);
+}
+
+/* ========================================================= */
+/* HERO SECTION */
+/* ========================================================= */
+.hero {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    line-height: 1.1;
+    color: var(--color-primary-bmw);
+}
+
+.hero-text .description {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.hero-image {
+    max-width: 50%;
+    text-align: right;
+    position: relative;
+    min-height: 300px;
+}
+
+/* Estilo para los placeholders de las ilustraciones */
+.illustration-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-light-bg); /* Fondo claro */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 3rem;
+    border: 1px dashed var(--color-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-illustration {
+    background-color: #e6f2ff; /* Dejamos un color claro para el placeholder */
+    height: 320px;
+}
+
+
+/* ========================================================= */
+/* BANNER SECTIONS (VERDE OSCURO) */
+/* ========================================================= */
+.banner-dark {
+    background: var(--color-primary-bmw);
+    color: white;
+    padding: 35px 0;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+/* ========================================================= */
+/* FEATURE SECTIONS (IMAGEN Y TEXTO) */
 /* ========================================================= */
 .feature-section {
     padding: 90px 0;
+}
+
+.light-bg {
+    background-color: var(--color-light-bg);
 }
 
 .feature-item {
@@ -46,6 +277,7 @@ h2 {
     align-items: center;
     justify-content: space-between;
     gap: 70px;
+    margin-bottom: 0;
 }
 
 .feature-item.reverse {
@@ -59,6 +291,7 @@ h2 {
 .feature-text h2 {
     font-size: 2.1rem;
     margin-bottom: 18px;
+    color: var(--color-primary-bmw);
 }
 
 .feature-text p {
@@ -67,73 +300,240 @@ h2 {
     line-height: 1.7;
 }
 
-.feature-link {
-    color: var(--color-speed-blue);
-    font-size: 0.95rem;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-}
-
-.feature-link i {
-    font-size: 0.8em;
-    margin-left: 8px;
-    transition: transform 0.3s;
-}
-
-.feature-link:hover {
-    color: var(--color-speed-blue-dark);
-}
-
-.feature-link:hover i {
-    transform: translateX(3px);
-}
-
 .feature-image {
     max-width: 50%;
     min-height: 250px;
 }
+.feature-illustration {
+    background-color: var(--color-light-bg);
+    height: 280px;
+    position: relative;
+}
+
 
 /* ========================================================= */
-/* IMÁGENES */
+/* TESTIMONIALS SECTION */
 /* ========================================================= */
-.feature-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.testimonials {
+    padding: 80px 0;
+    background-color: var(--color-light-bg);
+    text-align: center;
+}
+
+.testimonials .subtitle {
+    margin-bottom: 10px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background: white;
     border-radius: 8px;
+    padding: 30px;
+    text-align: left;
+    border: 1px solid var(--color-border);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* HOVER: Testimonial Cards */
+.testimonial-card:hover {
+    border-color: var(--color-primary-bmw);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.quote-title {
+    color: var(--color-primary-bmw);
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+
+.quote-text {
+    color: var(--color-dark);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.author-info {
+    font-weight: 600; /* Se ajusta a 600 de Montserrat */
+    font-size: 0.9rem;
+    color: var(--color-dark);
+}
+
+.author-info span {
+    display: block;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
 }
 
 /* ========================================================= */
-/* RESPONSIVE DESIGN */
+/* TEAMS SECTION (MODELOS) */
+/* ========================================================= */
+.teams {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.team-card {
+    background: var(--color-light-bg); /* Fondo más claro */
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* HOVER: Team Cards */
+.team-card:hover {
+    border-color: var(--color-primary-bmw);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.team-icon {
+    font-size: 2.8rem;
+    color: var(--color-primary-bmw);
+    margin-right: 20px;
+    width: 45px;
+    text-align: center;
+}
+
+.team-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.team-info p {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.teams .and-more {
+    margin-top: 40px;
+    display: block;
+}
+
+/* ========================================================= */
+/* CTA FINAL */
+/* ========================================================= */
+.cta-final {
+    background: var(--color-primary-bmw);
+    color: white;
+    padding: 70px 0;
+    text-align: center;
+}
+
+/* ========================================================= */
+/* FOOTER */
+/* ========================================================= */
+.footer-main {
+    background: var(--color-footer-dark);
+    color: white;
+    padding: 50px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #556964;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: white;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul a {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+/* HOVER: Enlaces del footer */
+.footer-column ul a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #b0b0b0;
+}
+
+/* Especificidad */
+.footer-bottom .footer-contact-info {
+    color: #587b72; /* Usamos el color secundario de Proactive Care */
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* ========================================================= */
+/* RESPONSIVE (Móvil y Tablet) - Se mantuvo la estructura del primero */
 /* ========================================================= */
 @media (max-width: 992px) {
-    .feature-item,
+    .hero-content, 
+    .feature-item, 
     .feature-item.reverse {
         flex-direction: column;
         text-align: center;
         gap: 40px;
     }
-
-    .feature-text, .feature-image {
+    
+    .hero-text, .feature-text, .hero-image, .feature-image {
         max-width: 100%;
     }
-
-    .feature-text h2 {
-        font-size: 1.8rem;
-    }
+    
+    .hero-text { order: 2; }
+    .hero-image { order: 1; margin-bottom: 0; }
+    .feature-item .feature-image { order: 1; margin-bottom: 20px; }
+    .feature-item .feature-text { order: 2; }
+    .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
+    .teams-grid { grid-template-columns: 1fr; gap: 20px; }
+    .footer-columns { flex-direction: column; gap: 30px; text-align: center; }
+    .team-card { justify-content: center; flex-direction: column; padding: 20px; }
+    .team-icon { margin: 0 0 10px 0; width: auto; }
 }
 
 @media (max-width: 576px) {
-    .feature-image {
-        min-height: 200px;
-    }
-
-    .feature-text h2 {
-        font-size: 1.6rem;
-    }
-
-    .feature-link {
-        font-size: 0.9rem;
-    }
+    .nav-links { flex-direction: column; gap: 15px; }
+    .navbar { flex-direction: column; gap: 20px; }
+    .hero-text h1 { font-size: 2rem; }
+    .btn { padding: 12px 25px; font-size: 0.85rem; }
+    .hero-image, .feature-image { min-height: 200px; }
+    .hero-illustration, .feature-illustration { height: 250px; }
+    .section-title { font-size: 1.8rem; }
 }

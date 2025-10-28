@@ -1,341 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMW Proactive Care</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css">
-  <style>
-    *{
-      box-sizing: border-box;
-    }
-
-    body{
-      margin: 0;
-      font-family: "Montserrat", sans-serif;
-      color: #333;
-      background-color: #f9fafb;
-    }
-
-    header{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5%;
-      background-color: white;
-    }
-
-    header img{
-      height: 40px;
-    }
-
-    header a{
-      text-decoration: none;
-      color: #404f4b;
-      font-weight: 600;
-      margin-left: 16px;
-      border: 1px solid #404f4b;
-      padding: 8px 16px;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-    }
-
-    header a:hover{
-      background-color: #404f4b;
-      color: white;
-    }
-
-    .hero{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      padding: 60px 5%;
-      background-color: white;
-    }
-
-    .hero-text{
-      flex: 1 1 400px;
-    }
-
-    .hero-text h1{
-      font-size: 40px;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: #404f4b;
-    }
-
-    .hero-text p{
-      font-size: 18px;
-      color: #555;
-      line-height: 1.5;
-      margin-bottom: 24px;
-    }
-
-    .btn-primary{
-      background-color: #404f4b;
-      color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .btn-primary:hover{
-      background-color: #2e3835;
-    }
-
-    .hero img{
-      flex: 1 1 400px;
-      max-width: 480px;
-      border-radius: 10px;
-    }
-
-    .banner{
-      background-color: #404f4b;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    .bannerfinal{
-      background-color: #587b72;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    footer{
-      background-color: #404f4b;
-      color: white;
-      padding: 40px 5%;
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-    }
-
-    footer h3{
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    footer a{
-      display: block;
-      color: #ccc;
-      text-decoration: none;
-      font-size: 14px;
-      margin-bottom: 6px;
-    }
-
-    footer a:hover{
-      color: white;
-    }
-
-    .opiniones {
-      padding: 80px 0;
-      background-color: #f5f5f5;
-      text-align: center;
-    }
-
-    .subtitulo {
-      margin-bottom: 10px;
-      color: #555;
-    }
-
-    .cuadros-opinion {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      margin-top: 40px;
-    }
-
-    .opinion {
-      background: white;
-      border-radius: 8px;
-      padding: 30px;
-      text-align: left;
-      border: 1px solid #ddd;
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-
-    .opinion:hover {
-      border-color: #003063;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .op-titulo {
-      color: #ca0000;
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-    }
-
-    .op-texto {
-      color: #222;
-      font-size: 0.95rem;
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
-
-    .titulo-seccion {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      color: #000;
-    }
-
-    @media (max-width: 768px){
-      .hero, .item{
-        text-align: center;
-      }
-      .item{
-        flex-direction: column;
-      }
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Sports - Landing Page (Estilo Proactivo)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assest/css/bootstrap.css">
+    <link rel="stylesheet" href="assest/css/estilos.css">
 </head>
 <body>
-<!-- jimena -->
-  <header>
-    <img src="logo.jpeg" alt="BMW logo">
-    <div>
-      <a href="#">For Company</a>
-      <a href="#">Log in</a>
+
+<header class="header">
+    <div class="container navbar d-flex justify-content-between align-items-center">
+        <a href="#" class="logo">
+            <span class="logo-icon"><i class="fas fa-car"></i></span>
+            BMW SPORTS
+        </a>
+        <div class="nav-links d-flex align-items-center gap-3 gap-md-5">
+            <a href="#">MODELOS</a>
+            <a href="#" class="btn btn-login">INICIAR SESIÓN</a>
+        </div>
     </div>
-  </header>
+</header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>PROACTIVE CARE.</h1>
-      <p>RELÁJATE, NOSOTROS NOS ENCARGAMOS.</p>
-      <a href="#" class="btn-primary">Encuentra tu socio de servicio BMW</a>
+<section class="hero">
+    <div class="container hero-content d-flex flex-wrap justify-content-between align-items-center">
+        <div class="hero-text flex-fill">
+            <h1>Vive la potencia del rendimiento alemán</h1>
+            <p class="subtitle">Diseño icónico, ingeniería de precisión y pura adrenalina.</p>
+            <p class="description">Explora nuestra gama de autos deportivos BMW M y siente el poder de la velocidad.</p>
+            <a href="#" class="btn btn-primary">DESCUBRE LOS MODELOS</a>
+        </div>
+        <div class="hero-image flex-fill text-center">
+            <div class="illustration-placeholder hero-illustration">
+                <img src="assest/img/bmw.jpg" alt="BMW Deportivo en la pista" class="responsive-img">
+            </div>
+        </div>
     </div>
-    <img src="bmwcar.jpg" alt="BMW">
-  </section>
+</section>
 
-  <section class="banner">
-    The M5 Sedan.
-  </section>
-
-  <!-- Angel -->
-  <section class="feature-section">
-        <div class="container feature-item reverse d-flex flex-wrap align-items-center gap-4">
-            <div class="feature-text flex-fill">
-                <h2>Diseñados para la velocidad</h2>
-                <p>Los motores BMW M son el resultado de décadas de ingeniería deportiva. Aceleración de 0 a 100 km/h en menos de 4 segundos.</p>
-                <a href="#" class="feature-link">Explorar motor M TwinPower <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <div class="feature-image flex-fill text-center">
-                <img src="bmwcar.jpg" alt="Motor BMW M TwinPower">
-            </div>
-        </div>
-    </section>
-
-    <section class="feature-section bg-light">
-        <div class="container feature-item d-flex flex-wrap align-items-center gap-4">
-            <div class="feature-text flex-fill">
-                <h2>Diseño aerodinámico y elegante</h2>
-                <p>Cada línea está optimizada para el rendimiento. La fusión entre forma y función crea una experiencia única en la carretera.</p>
-                <a href="#" class="feature-link">Ver diseño M Performance <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <div class="feature-image flex-fill text-center">
-                <img src="bmw.jpg" alt="Diseño aerodinámico BMW">
-            </div>
-        </div>
-    </section>
-
-    <section class="feature-section">
-        <div class="container feature-item reverse d-flex flex-wrap align-items-center gap-4">
-            <div class="feature-text flex-fill">
-                <h2>Tecnología y conectividad</h2>
-                <p>Controla cada aspecto de tu BMW desde la app MyBMW. Navegación avanzada, asistencia en carretera y estadísticas en tiempo real.</p>
-                <a href="#" class="feature-link">Descubre BMW ConnectedDrive <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <div class="feature-image flex-fill text-center">
-                <img src="bmw1.jpeg" alt="Tecnología ConnectedDrive">
-            </div>
-        </div>
-    </section>
-
-    <section class="feature-section bg-light">
-        <div class="container feature-item d-flex flex-wrap align-items-center gap-4">
-            <div class="feature-text flex-fill">
-                <h2>Experiencia de conducción incomparable</h2>
-                <p>Desde el asiento del conductor hasta la última curva, cada BMW está diseñado para ofrecer emoción pura y control total.</p>
-                <a href="#" class="feature-link">Conoce la experiencia M Drive <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <div class="feature-image flex-fill text-center">
-                <img src="bmwcar.jpg" alt="Experiencia de conducción">
-            </div>
-        </div>
-    </section>
-
-  <!-- Pao -->
-  <section class="opiniones">
-    <div class="contenedor">
-      <p class="subtitulo">Elige el financiamiento y los paquetes adecuados para el vehículo que has elegido.</p>
-      <h2 class="titulo-seccion">Al alcance de la mano. Tu nuevo BMW.</h2>
-
-      <div class="cuadros-opinion">
-        <div class="opinion">
-          <h3 class="op-titulo">Financiamiento BMW</h3>
-          <p class="op-texto">Hacemos que te resulte más fácil conseguir tu propio BMW. Una vez completado el pago, el vehículo es todo tuyo. Con kilómetros ilimitados, podrás viajar tan lejos como quieras. Organiza el financiamiento como más te convenga.</p>
-        </div>
-
-        <div class="opinion">
-          <h3 class="op-titulo">Leasing BMW</h3>
-          <p class="op-texto">Disfruta de la máxima libertad y flexibilidad financiera. Con atractivas cuotas mensuales, plazos de duración adaptados a tus deseos y la posibilidad de cambiar tu vehículo actual por uno nuevo periódicamente. Y sin compromiso a largo plazo.</p>
-        </div>
-
-        <div class="opinion">
-          <h3 class="op-titulo">Portal de clientes</h3>
-          <p class="op-texto">En el portal de clientes puedes administrar tus contratos, consultar pagos o descargar tus documentos. Así siempre estarás al día con tu BMW.</p>
-        </div>
-
-        <div class="opinion">
-          <h3 class="op-titulo">Atención al cliente</h3>
-          <p class="op-texto">¿Tienes dudas o necesitas más información sobre las ofertas o seguros? Ponte en contacto con el servicio de atención al cliente BMW.</p>
-        </div>
-      </div>
+<section class="banner banner-dark text-center">
+    <div class="container">
+        Los BMW M combinan lujo y desempeño con tecnología de punta.
     </div>
-  </section>
+</section>
 
-  <section class="bannerfinal">
-    The M5 Sedan.
-  </section>
+<section class="feature-section">
+    <div class="container feature-item reverse d-flex flex-wrap align-items-center gap-4">
+        <div class="feature-text flex-fill">
+            <h2>Diseñados para la velocidad</h2>
+            <p>Los motores BMW M son el resultado de décadas de ingeniería deportiva. Aceleración de 0 a 100 km/h en menos de 4 segundos.</p>
+            <a href="#" class="feature-link">Explorar motor M TwinPower <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="feature-image flex-fill text-center">
+            <div class="illustration-placeholder feature-illustration">
+                <img src="ruta/a/tu/imagen-feature-1.jpg" alt="Motor BMW M TwinPower" class="responsive-img">
+            </div>
+        </div>
+    </div>
+</section>
 
-  <footer>
-    <div>
-      <h3>Practica 5</h3>
-      <a href="#">Trabajo</a>
-      <a href="#">en</a>
-      <a href="#">equipo</a>
-      <a href="#">:|</a>
+<section class="feature-section light-bg">
+    <div class="container feature-item d-flex flex-wrap align-items-center gap-4">
+        <div class="feature-text flex-fill">
+            <h2>Diseño aerodinámico y elegante</h2>
+            <p>Cada línea está optimizada para el rendimiento. La fusión entre forma y función crea una experiencia única en la carretera.</p>
+            <a href="#" class="feature-link">Ver diseño M Performance <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="feature-image flex-fill text-center">
+            <div class="illustration-placeholder feature-illustration">
+                <img src="ruta/a/tu/imagen-feature-2.jpg" alt="Diseño aerodinámico BMW" class="responsive-img">
+            </div>
+        </div>
     </div>
-    <div>
-      <h3>Hola</h3>
-      <a href="#">Como</a>
-      <a href="#">estas</a>
-      <a href="#">hoy?</a>
-    </div>
-    <div>
-      <h3>Precios</h3>
-      <a href="#">del</a>
-      <a href="#">carro es</a>
-      <a href="#">2,949,9000 MXN</a>
-      <a href="#">Que caro</a>
-    </div>
-  </footer>    
+</section>
 
-  </section>
+<section class="feature-section">
+    <div class="container feature-item reverse d-flex flex-wrap align-items-center gap-4">
+        <div class="feature-text flex-fill">
+            <h2>Tecnología y conectividad</h2>
+            <p>Controla cada aspecto de tu BMW desde la app MyBMW. Navegación avanzada, asistencia en carretera y estadísticas en tiempo real.</p>
+            <a href="#" class="feature-link">Descubre BMW ConnectedDrive <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="feature-image flex-fill text-center">
+            <div class="illustration-placeholder feature-illustration">
+                <img src="ruta/a/tu/imagen-feature-3.jpg" alt="Tecnología ConnectedDrive" class="responsive-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-section light-bg">
+    <div class="container feature-item d-flex flex-wrap align-items-center gap-4">
+        <div class="feature-text flex-fill">
+            <h2>Experiencia de conducción incomparable</h2>
+            <p>Desde el asiento del conductor hasta la última curva, cada BMW está diseñado para ofrecer emoción pura y control total.</p>
+            <a href="#" class="feature-link">Conoce la experiencia M Drive <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div class="feature-image flex-fill text-center">
+            <div class="illustration-placeholder feature-illustration">
+                <img src="ruta/a/tu/imagen-feature-4.jpg" alt="Experiencia de conducción" class="responsive-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="banner banner-dark text-center">
+    <div class="container">
+        ¿Listo para sentir la potencia de un BMW M?
+    </div>
+</section>
+
+<section class="testimonials py-5">
+    <div class="container text-center">
+        <p class="subtitle">Opiniones de nuestros conductores</p>
+        <h2 class="section-title">Más de 50,000 apasionados confían en BMW</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <h3 class="quote-title">El mejor auto que he conducido</h3>
+                <p class="quote-text">“El BMW M4 es una obra de arte. Su precisión, su sonido y la sensación al conducirlo son incomparables.”</p>
+                <div class="author-info">- Carlos Ramírez <span>Piloto de Circuito</span></div>
+            </div>
+            <div class="testimonial-card">
+                <h3 class="quote-title">Una experiencia emocional</h3>
+                <p class="quote-text">“El BMW M3 me hace sonreír cada vez que lo arranco. Es potencia, control y elegancia en uno solo.”</p>
+                <div class="author-info">- Fernanda López <span>Entusiasta de autos deportivos</span></div>
+            </div>
+            <div class="testimonial-card">
+                <h3 class="quote-title">Tecnología que inspira</h3>
+                <p class="quote-text">“El sistema ConnectedDrive me permite controlar todo desde la app MyBMW. Navegación avanzada, asistencia en carretera y estadísticas en tiempo real.”</p>
+                <div class="author-info">- Diego Herrera <span>Ingeniero automotriz</span></div>
+            </div>
+            <div class="testimonial-card">
+                <h3 class="quote-title">Pasión sobre ruedas</h3>
+                <p class="quote-text">“BMW no fabrica autos, fabrica emociones. Mi M5 es mi orgullo.”</p>
+                <div class="author-info">- Laura Martínez <span>Propietaria BMW M5</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="teams py-5">
+    <div class="container text-center">
+        <h2 class="section-title">Modelos emblemáticos de BMW</h2>
+        <div class="teams-grid">
+            <div class="team-card">
+                <div class="team-icon"><i class="fas fa-car-side"></i></div>
+                <div class="team-info">
+                    <h3>BMW M2</h3>
+                    <p>Compacto, ágil y con el alma de un deportivo puro.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-icon"><i class="fas fa-car"></i></div>
+                <div class="team-info">
+                    <h3>BMW M3</h3>
+                    <p>El equilibrio perfecto entre potencia y elegancia.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-icon"><i class="fas fa-road"></i></div>
+                <div class="team-info">
+                    <h3>BMW M4</h3>
+                    <p>Estilo coupé con un desempeño inigualable.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-icon"><i class="fas fa-flag-checkered"></i></div>
+                <div class="team-info">
+                    <h3>BMW M5</h3>
+                    <p>Lujo y velocidad en perfecta armonía.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-icon"><i class="fas fa-bolt"></i></div>
+                <div class="team-info">
+                    <h3>BMW i4 M50</h3>
+                    <p>Rendimiento M totalmente eléctrico.</p>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-icon"><i class="fas fa-globe"></i></div>
+                <div class="team-info">
+                    <h3>BMW X6 M</h3>
+                    <p>El SUV deportivo que redefine el poder.</p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="feature-link and-more">Ver todos los modelos <i class="fas fa-chevron-right"></i></a>
+    </div>
+</section>
+
+<section class="cta-final py-5">
+    <div class="container text-center">
+        <h2 class="section-title">¿Listo para conducir la leyenda?</h2>
+        <a href="#" class="btn btn-primary btn-light">AGENDA UNA PRUEBA DE MANEJO</a>
+    </div>
+</section>
+
+<footer class="footer-main py-5">
+    <div class="container footer-content">
+        <div class="footer-columns d-flex flex-wrap justify-content-center gap-5">
+            <div class="footer-column">
+                <h3>Sobre BMW</h3>
+                <ul>
+                    <li><a href="#">Nuestra historia</a></li>
+                    <li><a href="#">M Performance</a></li>
+                    <li><a href="#">Innovación</a></li>
+                    <li><a href="#">Prensa</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Experiencia BMW</h3>
+                <ul>
+                    <li><a href="#">Pruebas de manejo</a></li>
+                    <li><a href="#">BMW Lifestyle</a></li>
+                    <li><a href="#">Eventos</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Soporte</h3>
+                <ul>
+                    <li><a href="#">Centros de servicio</a></li>
+                    <li><a href="#">Garantía</a></li>
+                    <li><a href="#">Asistencia 24h</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center mt-3">
+            <p><span class="footer-contact-info">contacto@bmw.com.mx &nbsp; | &nbsp; +52 55 8000 1234</span></p>
+            <p>BMW México, Av. Paseo de la Reforma 505, CDMX</p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
