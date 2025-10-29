@@ -1,16 +1,16 @@
 /* ========================================================= */
-/* VARIABLES Y BASE (M-PERFORMANCE THEME) */
+/* VARIABLES Y BASE (BMW THEME) */
 /* ========================================================= */
 :root {
-    /* Paleta de colores M-Performance (Naranja Vibrante de Acento) */
-    --color-speed-blue: #FF4400; /* Nuevo color principal: Naranja Vibrante/Rojo de acento */
-    --color-speed-blue-dark: #CC3700; /* Naranja/Rojo para hover más oscuro */
-    --color-dark: #1F2023; /* Texto oscuro principal (casi negro para mayor contraste) */
-    --color-text-muted: #757575; /* Texto secundario/apagado */
-    --color-light-bg: #f0f0f0; /* Fondo claro de secciones de características (ligeramente más gris) */
-    --color-footer-dark: #000000; /* Fondo del footer (Negro puro para un toque lujoso) */
-    --color-border: #444444; /* Borde de tarjetas y elementos (Gris oscuro para contraste) */
-    --font-main: 'Roboto', sans-serif;
+    /* Paleta de colores BMW Proactive Care */
+    --color-speed-blue: #404f4b; /* Color principal: gris azulado BMW */
+    --color-speed-blue-dark: #2e3835; /* Hover más oscuro */
+    --color-dark: #333333; /* Texto oscuro principal */
+    --color-text-muted: #555555; /* Texto secundario */
+    --color-light-bg: #f9fafb; /* Fondo claro */
+    --color-footer-dark: #404f4b; /* Fondo del footer */
+    --color-border: #dddddd; /* Borde claro */
+    --font-main: 'Montserrat', sans-serif;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #fff;
+    background-color: var(--color-light-bg);
 }
 
 .container {
@@ -52,7 +52,6 @@ a {
     transition: color 0.3s;
 }
 
-/* Estilo de enlaces de característica (con flecha) */
 .feature-link {
     color: var(--color-speed-blue);
     font-size: 0.95rem;
@@ -66,7 +65,6 @@ a {
     transition: transform 0.3s;
 }
 
-/* HOVER: Enlaces de característica */
 .feature-link:hover {
     color: var(--color-speed-blue-dark);
 }
@@ -91,7 +89,7 @@ a {
     z-index: 1;
 }
 
-/* Botón principal (Naranja Vibrante) */
+/* Botón principal */
 .btn-primary {
     background: var(--color-speed-blue);
     color: white !important;
@@ -100,7 +98,7 @@ a {
     background: var(--color-speed-blue-dark);
 }
 
-/* Pseudo-elemento ::after para efecto de brillo en hover */
+/* Brillo hover */
 .btn-primary::after {
     content: '';
     position: absolute;
@@ -113,14 +111,12 @@ a {
     transform: translateX(-100%);
     z-index: -1;
 }
-
 .btn-primary:hover::after {
     transform: translateX(0);
     z-index: 0; 
 }
 
-
-/* Botón de login (borde de acento) */
+/* Botón borde */
 .btn-login {
     background: none;
     color: var(--color-speed-blue) !important;
@@ -136,7 +132,7 @@ a {
     border-color: var(--color-speed-blue-dark);
 }
 
-/* Botón de CTA final (fondo blanco) */
+/* CTA final */
 .btn-light {
     background: white;
     color: var(--color-speed-blue) !important;
@@ -183,7 +179,6 @@ a {
     color: var(--color-text-muted);
     font-weight: 500;
 }
-/* HOVER: Enlaces del navbar */
 .nav-links a:not(.btn):hover {
     color: var(--color-dark);
 }
@@ -201,16 +196,23 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 50px;
+    flex-direction: row;
 }
 
 .hero-text {
     max-width: 50%;
 }
 
+.hero-text {
+    flex: 1;
+    text-align: left;
+}
+
 .hero-text h1 {
     font-size: 2.8rem;
     margin-bottom: 15px;
     line-height: 1.1;
+    color: var(--color-speed-blue);
 }
 
 .hero-text .description {
@@ -227,49 +229,55 @@ a {
     min-height: 300px;
 }
 
-/* Estilo para los placeholders de las ilustraciones (Oscuro para M-Performance) */
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+
 .illustration-placeholder {
     width: 100%;
     height: 100%;
-    background-color: #f0f0f0;
+    background-color: var(--color-light-bg);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #444444; /* Color de icono más oscuro */
+    color: #444;
     font-size: 3rem;
     border: 1px dashed var(--color-border);
     position: relative;
     overflow: hidden;
 }
-
 .illustration-placeholder i {
     position: absolute;
     opacity: 0.6;
 }
 
-/* Fondo oscuro para las ilustraciones para un toque más premium/fibra de carbono */
 .hero-illustration {
-    background-color: #2C2C2C; 
+    background-color: #e8e8e8;
     height: 320px;
 }
 
-/* ========================================================= */
-/* AJUSTES PARA IMÁGENES (NUEVO) */
-/* ========================================================= */
 .illustration-placeholder img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra todo el placeholder sin distorsionarse */
-    border-radius: 8px; /* Mantiene el borde redondeado del contenedor */
+    object-fit: cover;
+    border-radius: 8px;
     display: block;
 }
-/* Para que el ícono de placeholder (si existe) no se vea sobre la imagen */
 .illustration-placeholder:has(img[src*='http']) i {
     display: none;
 }
+
 /* ========================================================= */
-/* BANNER SECTIONS (ROJO/NARANJA DE ACENTO) */
+/* BANNER SECTIONS */
 /* ========================================================= */
 .banner-dark {
     background: var(--color-speed-blue);
@@ -281,7 +289,7 @@ a {
 }
 
 /* ========================================================= */
-/* FEATURE SECTIONS (IMAGEN Y TEXTO) */
+/* FEATURE SECTIONS */
 /* ========================================================= */
 .feature-section {
     padding: 90px 0;
@@ -296,7 +304,6 @@ a {
     align-items: center;
     justify-content: space-between;
     gap: 70px;
-    margin-bottom: 0;
 }
 
 .feature-item.reverse {
@@ -310,6 +317,7 @@ a {
 .feature-text h2 {
     font-size: 2.1rem;
     margin-bottom: 18px;
+    color: var(--color-speed-blue);
 }
 
 .feature-text p {
@@ -322,25 +330,20 @@ a {
     max-width: 50%;
     min-height: 250px;
 }
-/* Fondo oscuro para las ilustraciones para un toque más premium/fibra de carbono */
+
 .feature-illustration {
-    background-color: #2C2C2C;
+    background-color: #ffffff;
     height: 280px;
     position: relative;
 }
 
-
 /* ========================================================= */
-/* TESTIMONIALS SECTION */
+/* TESTIMONIALS */
 /* ========================================================= */
 .testimonials {
     padding: 80px 0;
     background-color: var(--color-light-bg);
     text-align: center;
-}
-
-.testimonials .subtitle {
-    margin-bottom: 10px;
 }
 
 .testimonials-grid {
@@ -358,15 +361,13 @@ a {
     border: 1px solid var(--color-border);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
-
-/* HOVER: Testimonial Cards */
 .testimonial-card:hover {
     border-color: var(--color-speed-blue);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .quote-title {
-    color: var(--color-speed-blue); /* Acento en el título */
+    color: var(--color-speed-blue);
     font-size: 1.15rem;
     margin-bottom: 12px;
 }
@@ -383,7 +384,6 @@ a {
     font-size: 0.9rem;
     color: var(--color-dark);
 }
-
 .author-info span {
     display: block;
     font-weight: 400;
@@ -397,6 +397,7 @@ a {
 .teams {
     padding: 80px 0;
     text-align: center;
+    background-color: white;
 }
 
 .teams-grid {
@@ -406,7 +407,7 @@ a {
 }
 
 .team-card {
-    background: white;
+    background: var(--color-light-bg);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: 25px;
@@ -415,8 +416,6 @@ a {
     text-align: left;
     transition: border-color 0.3s, box-shadow 0.3s;
 }
-
-/* HOVER: Team Cards */
 .team-card:hover {
     border-color: var(--color-speed-blue);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -424,7 +423,7 @@ a {
 
 .team-icon {
     font-size: 2.8rem;
-    color: var(--color-speed-blue); /* Iconos en color de acento */
+    color: var(--color-speed-blue);
     margin-right: 20px;
     width: 45px;
     text-align: center;
@@ -435,7 +434,6 @@ a {
     margin-bottom: 6px;
     font-weight: 500;
 }
-
 .team-info p {
     font-size: 0.85rem;
     color: var(--color-text-muted);
@@ -445,13 +443,14 @@ a {
 .teams .and-more {
     margin-top: 40px;
     display: block;
+    color: var(--color-speed-blue);
 }
 
 /* ========================================================= */
 /* CTA FINAL */
 /* ========================================================= */
 .cta-final {
-    background: var(--color-speed-blue); /* Fondo en color de acento */
+    background: #587b72;
     color: white;
     padding: 70px 0;
     text-align: center;
@@ -461,14 +460,9 @@ a {
 /* FOOTER */
 /* ========================================================= */
 .footer-main {
-    background: var(--color-footer-dark); /* Fondo Negro Puro */
+    background: var(--color-footer-dark);
     color: white;
     padding: 50px 0;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
 }
 
 .footer-columns {
@@ -476,7 +470,7 @@ a {
     justify-content: space-around;
     gap: 40px;
     padding-bottom: 40px;
-    border-bottom: 1px solid #4a4a4a;
+    border-bottom: 1px solid #555;
     margin-bottom: 30px;
 }
 
@@ -498,10 +492,9 @@ a {
 }
 
 .footer-column ul a {
-    color: #b0b0b0;
+    color: #ccc;
     font-size: 0.9rem;
 }
-/* HOVER: Enlaces del footer */
 .footer-column ul a:hover {
     color: white;
 }
@@ -510,18 +503,11 @@ a {
     padding-top: 20px;
     text-align: center;
     font-size: 0.85rem;
-    color: #909090;
-}
-
-/* Especificidad */
-.footer-bottom .footer-contact-info {
-    color: var(--color-speed-blue); /* Contacto en color de acento */
-    font-weight: 700;
-    display: inline-block;
+    color: #ccc;
 }
 
 /* ========================================================= */
-/* RESPONSIVE (Móvil y Tablet) */
+/* RESPONSIVE */
 /* ========================================================= */
 @media (max-width: 992px) {
     .hero-content, 
@@ -531,45 +517,17 @@ a {
         text-align: center;
         gap: 40px;
     }
-    
+
     .hero-text, .feature-text, .hero-image, .feature-image {
         max-width: 100%;
-    }
-    
-    .hero-text {
-        order: 2;
-    }
-    
-    .hero-image {
-        order: 1;
-        margin-bottom: 0;
-    }
-
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .feature-text h2 {
-        font-size: 1.8rem;
-    }
-
-    .feature-item .feature-image {
-        order: 1;
-        margin-bottom: 20px;
-    }
-    
-    .feature-item .feature-text {
-        order: 2;
     }
 
     .testimonials-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
-    
+
     .teams-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
 
     .footer-columns {
@@ -577,41 +535,13 @@ a {
         gap: 30px;
         text-align: center;
     }
-    
+
     .team-card {
         justify-content: center;
         flex-direction: column;
-        padding: 20px;
     }
     .team-icon {
         margin: 0 0 10px 0;
         width: auto;
-    }
-}
-
-@media (max-width: 576px) {
-    .nav-links {
-        flex-direction: column;
-        gap: 15px;
-    }
-    .navbar {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .hero-text h1 {
-        font-size: 2rem;
-    }
-    .btn {
-        padding: 12px 25px;
-        font-size: 0.85rem;
-    }
-    .hero-image, .feature-image {
-        min-height: 200px;
-    }
-    .hero-illustration, .feature-illustration {
-        height: 250px;
-    }
-    .section-title {
-        font-size: 1.8rem;
     }
 }
