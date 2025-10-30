@@ -272,9 +272,6 @@ a {
     border-radius: 8px;
     display: block;
 }
-.illustration-placeholder:has(img[src*='http']) i {
-    display: none;
-}
 
 /* ========================================================= */
 /* BANNER SECTIONS */
@@ -304,10 +301,6 @@ a {
 /* ========================================================= */
 .feature-section {
     padding: 90px 0;
-}
-
-.light-bg {
-    background-color: var(--color-light-bg);
 }
 
 .feature-item {
