@@ -164,8 +164,10 @@ a {
 }
 
 .logo-icon {
+    width: 40px;   
+    height: auto;   
+    max-height: 40px; 
     margin-right: 8px;
-    font-size: 1.1em;
 }
 
 .nav-links {
@@ -279,7 +281,7 @@ a {
 .banner-dark {
     background: var(--color-speed-blue);
     color: white;
-    padding: 20px 0;
+    padding: 25px 0;
     margin-top: -20px;
     text-align: center;
     font-size: 1.15rem;
@@ -348,79 +350,79 @@ a {
     padding: 80px 0;
     background-color: #f5f5f5;
     text-align: center;
-    }
+}
 
-    .subtitulo {
+.subtitulo {
     margin-bottom: 10px;
     color: #555;
-    }
+}
 
-    .contenedor {
+.contenedor {
     max-width: 950px;
     margin: 0 auto;
-    }
+}
 
-    .cuadros-opinion {
+.cuadros-opinion {
     display: grid;
     grid-template-columns: repeat(2, minmax(250px, 400px));
     justify-content: center;
     gap: 25px;
     margin-top: 40px;
-    }
+}
 
-    .opinion {
+.opinion {
     background: white;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
     border: 1px solid #ddd;
     transition: border-color 0.3s, box-shadow 0.3s;
-    }
+}
 
-    .opinion:hover {
+.opinion:hover {
     border-color: #003063;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    }
+}
 
-    .op-titulo {
+.op-titulo {
     color: #0f0228;
     font-size: 1.1rem;
     margin-bottom: 12px;
     text-align: center;
 
-    }
+}
 
-    .op-texto {
+.op-texto {
     color: #222;
     font-size: 0.95rem;
     margin-bottom: 15px;
     line-height: 1.6;
     text-align: center;
-    }
+}
 
-    .titulo-seccion {
+.titulo-seccion {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #000;
-    }
+}
 
-    .dato {
-        font-weight: 600; /* Se ajusta a 600 de Montserrat */
-        font-size: 0.9rem;
-        color: var(--color-dark);
-        border-top: 1px solid #ddd; 
-        padding-top: 10px; /* espacio entre la línea y el texto */
-        margin-top: 15px; /* separa la línea del párrafo anterior */
-    }
+.dato {
+    font-weight: 600; /* Se ajusta a 600 de Montserrat */
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    border-top: 1px solid #ddd; 
+    padding-top: 10px; /* espacio entre la línea y el texto */
+    margin-top: 15px; /* separa la línea del párrafo anterior */
+}
 
-    .dato span {
-        display: block;
-        font-weight: 400;
-        color: var(--color-text-muted);
-        font-size: 0.8rem;
-    }
+.dato span {
+    display: block;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    font-size: 0.8rem;
+}
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
     .cuadros-opinion {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -434,7 +436,7 @@ a {
     .opinion {
         padding: 18px;
     }
-    }
+}
 /* ========================================================= */
 /* TEAMS SECTION */
 /* ========================================================= */
