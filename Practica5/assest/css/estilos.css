@@ -361,7 +361,7 @@ a {
 
 .cuadros-opinion {
     display: grid;
-    grid-template-columns: repeat(2, minmax(250px, 400px));
+    grid-template-columns: repeat(2, 40%);
     justify-content: center;
     gap: 25px;
     margin-top: 40px;
